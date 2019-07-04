@@ -1,0 +1,11 @@
+#! /bin/bash
+# count the files in specified directory
+function count_file(){
+#count the number of files in present working directory
+COUNT=$(ls ${1} | wc -l)
+echo ${1} 
+echo "there are  $COUNT in current directory"
+}
+
+count_file ${1}
+
