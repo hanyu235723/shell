@@ -3,3 +3,20 @@ begin with today's date in the following format: YYYY­MM­DD. For example,
 if a picture of my cat was in the current directory and today was October 31, 2016 
 it would change name from "mycat.jpg" to "2016­10­31­mycat.jpg".
 
+
+#!/bin/bash
+
+# rename file *.mp3 in current directory 
+
+function rename_file(){
+        for file in *.jpg
+do
+        newname=$(date +%F)$(basename $file)
+        echo $newname
+ mv $file $newname
+done
+
+
+}
+
+rename_file
