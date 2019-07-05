@@ -4,7 +4,8 @@ if a picture of my cat was in the current directory and today was October 31, 20
 it would change name from "mycat.jpg" to "2016­10­31­mycat.jpg".
 
 ## 等号两边不能有空格；调用函数传入参数不需要括号，如同在command 命令行那样 后面跟参数：调用变量加$ ;记得加入解释器路径（shebang)
-##wildcard，for loop format： 
+##wildcard，for loop format； 不理解这样的方法： V = 'date +%F' (这样不是一个字符串了吗？怎么知道是inner function？）不过我用了
+V=$(date +%F).
 
 #!/bin/bash
 
@@ -13,7 +14,7 @@ it would change name from "mycat.jpg" to "2016­10­31­mycat.jpg".
 function rename_file(){
         for file in *.jpg
 do
-        newname=$(date +%F)$(basename $file)
+        newname=$(date +%Y%m%d)$(basename $file)
         echo $newname
  mv $file $newname
 done
